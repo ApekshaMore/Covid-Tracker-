@@ -1,0 +1,35 @@
+<div class="jumbotron bg-white text-center">
+    <h1 class="display-4"style="background-color: lightgray;">Corona Covid-19 Tracker Country Wise</h1>
+    <hr/>
+    <div class="mx-auto">
+        <div class="form-group col-lg-5 mx-auto">
+            <label for="ng-input">Select Country</label>
+            <select name="" id="c" class="form-control" #input (change)='updateValues(input.value)'>
+                <option value="{{con}}" *ngFor='let con of countries'>{{con}}</option>
+            </select>
+        </div>
+    </div>
+    <app-dashboard-card [totalConfirmed]='totalConfirmed' [totalActive]='totalActive' [totalRecovered]='totalRecovered'
+    [totalDeath]='totalDeath'></app-dashboard-card>
+  <table-pagination></table-pagination>
+    <!-- <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Sno.</th>    
+                        <th>Date</th>
+                        <th>Cases</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let cs of selectedCountryData; index as i '>
+                        <td>{{i+1}}</td>
+                        <td>{{cs.date | date}}</td>
+                        <td>{{cs.cases}}</td>
+                    </tr>   
+                </tbody>
+            </table>
+        </div>
+    </div> -->
+</div>
